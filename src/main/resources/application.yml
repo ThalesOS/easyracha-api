@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: easyracha-api
+
+  # Configuração do Banco de Dados em Memória (H2)
+  datasource:
+    url: jdbc:h2:mem:easyrachadb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # Configuração do JPA/Hibernate
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update # Cria as tabelas automaticamente baseado no seu código Java
+    show-sql: true # Mostra no console o SQL que o Java está executando
+    properties:
+      hibernate:
+        format_sql: true
+
+# Configuração das rotas do Swagger
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
